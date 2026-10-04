@@ -7,17 +7,19 @@ public class Main {
         StringBuilder out = new StringBuilder();
 
         int t = sc.nextInt();
+        String target = "codeforces";
 
         while (t-- > 0) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            int c = sc.nextInt();
+            String s = sc.next();
+            int count = 0;
 
-            if (a + b == c || a + c == b || b + c == a) {
-                out.append("YES\n");
-            } else {
-                out.append("NO\n");
+            for (int i = 0; i < 10; i++) {
+                if (s.charAt(i) != target.charAt(i)) {
+                    count++;
+                }
             }
+
+            out.append(count).append('\n');
         }
 
         System.out.print(out);
